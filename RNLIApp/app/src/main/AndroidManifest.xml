@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainNavigationActivity"></activity>
+        <activity android:name=".MainNavigationActivity" />
+        <activity android:name=".InitialPatientCheck"></activity>
     </application>
 
 </manifest>

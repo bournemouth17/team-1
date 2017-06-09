@@ -19,7 +19,8 @@
         <activity android:name=".MainNavigationActivity" />
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
-        <activity android:name=".CareControlCards"></activity>
+        <activity android:name=".CareControlCards" />
+        <activity android:name=".IllnessCards"></activity>
     </application>
 
 </manifest>

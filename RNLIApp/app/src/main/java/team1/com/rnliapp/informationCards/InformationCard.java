@@ -42,7 +42,7 @@ public class InformationCard {
         }
     }
 
-    public void addMarkers(String[] markers) {
+    /*public void addMarkers(String[] markers) {
         for(int i = 0; i < markers.length; i++) {
             addMarker(markers[i]);
         }
@@ -52,7 +52,7 @@ public class InformationCard {
         for(int i = 0; i < markers.size(); i++) {
             addMarker(markers.get(i));
         }
-    }
+    }*/
 
     public void addNote(String note) {
         if(!notes.contains(note.toUpperCase()) && note.length() > 1) {
@@ -60,7 +60,7 @@ public class InformationCard {
         }
     }
 
-    public void addNotes(String[] notes) {
+    /*public void addNotes(String[] notes) {
         for(int i = 0; i < notes.length; i++) {
             addNote(notes[i]);
         }
@@ -70,7 +70,7 @@ public class InformationCard {
         for(int i = 0; i < notes.size(); i++) {
             addNote(notes.get(i));
         }
-    }
+    }*/
 
     public void addBranch(String branchName, String[] branchSteps) {
         if(!branches.containsKey(branchName.toUpperCase()) && branchSteps.length != 0) {
@@ -78,13 +78,12 @@ public class InformationCard {
         }
     }
 
-    public void addBranch(String branchName, List<String> branchSteps) {
+    /*public void addBranch(String branchName, List<String> branchSteps) {
         if(!branches.containsKey(branchName.toUpperCase()) && branchSteps.size() != 0) {
             branches.put(branchName.toUpperCase(), branchSteps);
         }
-    }
+    }*/
 
-    //TODO Add in methods to retrieve branch and branch step values.
     public String getInformationCardName() {
         return informationCardName;
     }
@@ -97,9 +96,25 @@ public class InformationCard {
         return importantInfo;
     }
 
-    public static void main(String[] args) {
-        InformationCard card = InformationCardParser.getInstance().parseCardFromFile("Card_10");
-        System.out.println("Card Name: " + card.getInformationCardName() + "\nCard Number: " + card.getInformationCardNumber());
+    public String[] getMarkers() {
+        if(markers.size() > 0) {
+            return markers.toArray(new String[markers.size()]);
+        }
+        return null;
+    }
+
+    public String[] getNotes() {
+        if(notes.size() > 0) {
+            return notes.toArray(new String[notes.size()]);
+        }
+        return null;
+    }
+
+    public String[] getBranchSteps(int branchIndex) {
+        if(branchIndex < branches.size()) {
+            return branches.get(branchIndex).toArray(new String[branches.size()]);
+        }
+        return null;
     }
 
 }

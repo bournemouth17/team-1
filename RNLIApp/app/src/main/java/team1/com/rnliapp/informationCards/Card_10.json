@@ -3,7 +3,7 @@
   "card_number": 10,
   "markers": [ "Yawning", "Sweating", "Shivering", "Pale", "Retching", "Vomiting",
     "Collapse", "Incontinence", "Lethargic", "Weak", "Disoriented", "Incapacitated" ],
-  "branchs": [
+  "branches": [
     {
       "branch_name": "Patient Unconscious",
       "branch_steps": [

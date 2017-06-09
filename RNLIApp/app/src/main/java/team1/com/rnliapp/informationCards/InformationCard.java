@@ -12,17 +12,22 @@ import java.util.List;
 public class InformationCard {
 
     private String informationCardName = "New Information Card", importantInfo = null;
+    private int informationCardNumber = -1;
     private List<String> markers = new ArrayList<>(), notes = new ArrayList<>();;
     private Hashtable<String, List<String>> branches = new Hashtable<>();
 
-    public InformationCard(String cardName) { informationCardName = cardName; }
+    public InformationCard(String cardName, int cardNumber) {
+        informationCardName = cardName;
+        informationCardNumber = cardNumber;
+    }
 
-    public InformationCard(String informationCardName, String importantInfo, List<String> markers, List<String> notes, Hashtable<String, List<String>> branches) {
-        this.informationCardName = informationCardName;
-        this.importantInfo = importantInfo;
-        this.markers = markers;
-        this.notes = notes;
-        this.branches = branches;
+    public InformationCard(String informationCardName, int cardNumber, String importantInfo, List<String> markers, List<String> notes, Hashtable<String, List<String>> branches) {
+        this.informationCardName = informationCardName.length() > 1 ? informationCardName : "New Information Card";
+        this.informationCardNumber = cardNumber > -1 ? cardNumber : -1;
+        this.importantInfo = importantInfo.length() > 1 ? importantInfo : null;
+        this.markers = markers.size() > 0 ? markers : new ArrayList<String>();
+        this.notes = notes.size() > 0 ? markers : new ArrayList<String>();
+        this.branches = branches.size() > 0 ? branches : new Hashtable<String, List<String>>();
     }
 
     public void addImportantInfo(String importantInfo) {
@@ -79,12 +84,22 @@ public class InformationCard {
         }
     }
 
+    //TODO Add in methods to retrieve branch and branch step values.
     public String getInformationCardName() {
         return informationCardName;
+    }
+
+    public int getInformationCardNumber() {
+        return informationCardNumber;
     }
 
     public String getImportantInfo() {
         return importantInfo;
     }
-    
+
+    public static void main(String[] args) {
+        InformationCard card = InformationCardParser.getInstance().parseCardFromFile("Card_10");
+        System.out.println("Card Name: " + card.getInformationCardName() + "\nCard Number: " + card.getInformationCardNumber());
+    }
+
 }

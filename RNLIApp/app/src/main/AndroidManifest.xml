@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainNavigationActivity" />
-        <activity android:name=".InformationCardDisplay"></activity>
-        <activity android:name=".ContentsActivity"></activity>
+        <activity android:name=".InformationCardDisplay" />
+        <activity android:name=".ContentsActivity" />
+        <activity android:name=".CareControlCards"></activity>
     </application>
 
 </manifest>

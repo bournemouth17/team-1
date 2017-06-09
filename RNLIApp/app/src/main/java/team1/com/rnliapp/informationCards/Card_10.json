@@ -1,0 +1,26 @@
+{
+  "card_name": "Sea Sickness",
+  "card_number": 10,
+  "markers": [ "Yawning", "Sweating", "Shivering", "Pale", "Retching", "Vomiting",
+    "Collapse", "Incontinence", "Lethargic", "Weak", "Disoriented", "Incapacitated" ],
+  "branchs": [
+    {
+      "branch_name": "Patient Unconscious",
+      "branch_steps": [
+        "Open airway using Head Tilt Chin Lift Prepare Suction.",
+        "Consider plastic airway\nGIVE 15 liters/min\nOXYGEN via free flow mask.",
+        "Place in Recovery Position and keep warm with blanket.",
+        "Monitor and evacuate, slightly head down."
+      ]
+    },
+    {
+      "branch_name": "Patient Conscious",
+      "branch_steps": [
+        "Administer 1 sea sickness pill - Patient sucks or chews tablet - Patient must be older than 10 years.",
+        "Place in a well ventilated area but keep warm.",
+        "Encourage frequent sips of water.",
+        "Focus on horizon or encourage sleep."
+      ]
+    }
+  ]
+}

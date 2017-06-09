@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".MainNavigationActivity" />
         <activity android:name=".InitialPatientCheck"></activity>
+        <activity android:name=".InformationCardDisplay"></activity>
+        <activity android:name=".ContentsActivity"></activity>
     </application>
 
 </manifest>

@@ -58,15 +58,21 @@ public class Database {
         }
     }
 
-    public void createIncident(){
+    public void createIncident(String description){
+        executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ getIncidentId() +", '" + description +"')");
+    }
+
+    private int getIncidentId(){
+        int incidentId = 0;
         try{
-            ResultSet rs = executeQuery("SELECT MAX(`incidentID`) FROM incident");
-            int incidentId = rs.getInt("incidentId");
-            System.out.println(incidentId);
+            ResultSet rs = executeQuery("SELECT incidentId FROM incident ORDER BY incidentId DESC");
+            rs.next();
+            incidentId = rs.getInt("incidentId");
         }
         catch(SQLException e){
             e.printStackTrace();
         }
+        return ++incidentId;
     }
 
     public static void main(String args[]){
@@ -74,6 +80,6 @@ public class Database {
         String dbUser = "harvey";
         String dbPass = "password";
         Database db = new Database(dbURL, dbUser, dbPass);
-        db.createIncident();
+        db.createIncident("test");
     }
 }

@@ -102,6 +102,7 @@ public class ContentsActivity extends AppCompatActivity {
         Button orangeButton = (Button)(findViewById(R.id.orangeButton));
         Button greenButton = (Button)(findViewById(R.id.greenButton));
         Button lightBlueButton = (Button)(findViewById(R.id.lightBlueButton));
+        Button pinkButton = (Button)(findViewById(R.id.pinkButton));
 
         suggestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +143,14 @@ public class ContentsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //go to immersion / heat card options
                 Intent intent = new Intent(ContentsActivity.this, ImmersionHeatCards.class);
+                startActivity(intent);
+            }
+        });
+
+        pinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ContentsActivity.this, PatientInfo.class);
                 startActivity(intent);
             }
         });

@@ -33,7 +33,6 @@
         <activity android:name=".InitialPatientCheck" />
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
-        <activity android:name=".PersonalInfo2"></activity>
     </application>
 
 </manifest>

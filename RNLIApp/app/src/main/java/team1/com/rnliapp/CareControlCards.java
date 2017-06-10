@@ -1,5 +1,6 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,8 @@ public class CareControlCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 1
+                Intent intent = new Intent(CareControlCards.this, InformationCardDisplay.class);
+                startActivity(intent);
             }
         });
 

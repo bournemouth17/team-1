@@ -35,7 +35,7 @@ public class Database {
             System.out.println("CONNECTION FAILED");
         }
     }
-    public static ResultSet executeQuery(String sql){
+    public ResultSet executeQuery(String sql){
         try{
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
@@ -56,5 +56,24 @@ public class Database {
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void createIncident(){
+        try{
+            ResultSet rs = executeQuery("SELECT MAX(`incidentID`) FROM incident");
+            int incidentId = rs.getInt("incidentId");
+            System.out.println(incidentId);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String args[]){
+        String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
+        String dbUser = "harvey";
+        String dbPass = "password";
+        Database db = new Database(dbURL, dbUser, dbPass);
+        db.createIncident();
     }
 }

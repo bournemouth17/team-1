@@ -1,0 +1,35 @@
+{
+  "card_name": "Treatment of burns",
+  "card_number": 12,
+  "markers": [ "Breathing rate 30+", "Central cap refull 3+ secs", "Pain. Pale and sweaty" ],
+  "branches": [
+    {
+      "branch_name": "Facial Burns",
+      "branch_steps": [
+        "OSuspect airway swelling.",
+        "Use ENTONOX for pain relief if available - unless chest or head injury or diver."
+		"If BIG SICK and no ENTONOX available give 15 litres/min oxygen via free flow mask."
+		"Cool and dress face burns if possible."
+		"Rapid evacuation to hospital."
+      ]
+    },
+    {
+      "branch_name": "Rest of Body Burns",
+      "branch_steps": [
+        "Remove from cause. Remove watches/jewellery."
+		"Cool burn for at least 10 minutes."
+		"Use ENTONOX for pain relief is available - unless chest or head injury or diver."
+		"If BIG SICK and no ENTONOX available give 15 litres/min oxygen via free flow mask."
+		"Dress burns with cling film or burn bags."
+		"Rapid evacuation to hospital."
+      ]
+    }
+  ]
+  "notes": [
+	"Cool burn for 10 minutes or more - aim for burn to be cool to the touch - do not overcool and induce hypothermia."
+	"Be ready to treat unconsciousness CARD 1 or resuscitate CARD 2"
+	"Transport hea down if unconscious"
+	"Do not burst blisters, or apply adhesive dressings."
+	"Do not remove clothing stuck to a burn."
+  ]
+}

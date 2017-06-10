@@ -21,6 +21,15 @@
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
         <activity android:name=".BreathTimer"></activity>
+        <activity android:name=".InformationCardDisplay" />
+        <activity android:name=".ContentsActivity" />
+        <activity android:name=".CareControlCards" />
+        <activity android:name=".IllnessCards" />
+        <activity android:name=".InjuryActivity" />
+        <activity android:name=".ImmersionHeatCards"></activity>
+        <activity android:name=".InitialPatientCheck"></activity>
+        <activity android:name=".InformationCardDisplay"></activity>
+        <activity android:name=".ContentsActivity"></activity>
     </application>
 
 </manifest>

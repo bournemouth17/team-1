@@ -15,6 +15,9 @@ public class InjuryActivity extends AppCompatActivity {
         this.setListeners();
     }
 
+    /**
+     * Sets the listeners for the buttons in the injury activity
+     */
     protected void setListeners(){
         Button card12 = (Button)(findViewById(R.id.card12));
         Button card13 = (Button)(findViewById(R.id.card13));
@@ -23,6 +26,7 @@ public class InjuryActivity extends AppCompatActivity {
         Button card16 = (Button)(findViewById(R.id.card16));
 
 
+        //card 12 opens on click
         card12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +37,7 @@ public class InjuryActivity extends AppCompatActivity {
             }
         });
 
+        //card 13 opens on click
         card13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +49,7 @@ public class InjuryActivity extends AppCompatActivity {
             }
         });
 
+        //card 14 opens on click
         card14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +60,7 @@ public class InjuryActivity extends AppCompatActivity {
             }
         });
 
+        //card 15 opens on click
         card15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +71,7 @@ public class InjuryActivity extends AppCompatActivity {
             }
         });
 
+        //card 16 opens on click
         card16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

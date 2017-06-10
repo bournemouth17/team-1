@@ -10,7 +10,7 @@
         android:layout_width="368dp"
         android:layout_height="fill_parent"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="-77dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,10 +20,62 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Confirm and Send"
-                android:textSize="25sp"
                 android:background="@android:color/holo_blue_bright"
-                />
+                android:text="Confirm and Send"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/nameBox"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/DOBBox"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/addressBox"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telephone number:"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/telephoneBox"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,13 +90,26 @@
                 android:inputType="textMultiLine" />
 
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drugs given (time and dosage):"
-            android:textSize="25sp" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drugs given:"
+                android:textSize="25sp" />
 
             <EditText
                 android:id="@+id/medicineBox"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dosage:"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/dosageBox"
                 android:layout_width="match_parent"
                 android:layout_height="129dp"
                 android:ems="10"
@@ -115,8 +180,6 @@
                 android:layout_height="129dp"
                 android:ems="10"
                 android:inputType="textMultiLine" />
-
-
 
 
         </LinearLayout>

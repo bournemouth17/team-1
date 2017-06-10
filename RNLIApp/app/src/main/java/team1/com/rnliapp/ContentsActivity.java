@@ -8,27 +8,34 @@ import android.widget.Button;
 
 public class ContentsActivity extends AppCompatActivity {
     Button suggestionButton;
+    static int cardSuggestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contents);
         this.setListeners();
-
+        setSuggestion();
     }
 
+    public static void setCard(int suggestion){
+        cardSuggestion = suggestion;
+    }
     //sets the card to be opened on click of the suggested button
-    public void setSuggestion(final int cardNum){
+    public void setSuggestion(){
+        //suggestionButton.setText(cardNum);
         suggestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ContentsActivity.this, InformationCardDisplay.class);
-                intent.putExtra("CARD_NUMBER",cardNum);
+                intent.putExtra("CARD_NUMBER",cardSuggestion);
                 startActivity(intent);
             }
         });
 
-        switch (cardNum) {
+
+
+        switch (cardSuggestion) {
             case 1:
                 suggestionButton.setText("SUGGESTION: UNCONCIOUS BREATHING PATIENT CARE");
                 break;
@@ -102,6 +109,7 @@ public class ContentsActivity extends AppCompatActivity {
         Button orangeButton = (Button)(findViewById(R.id.orangeButton));
         Button greenButton = (Button)(findViewById(R.id.greenButton));
         Button lightBlueButton = (Button)(findViewById(R.id.lightBlueButton));
+        Button pinkButton = (Button)(findViewById(R.id.pinkButton));
 
         suggestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +150,14 @@ public class ContentsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //go to immersion / heat card options
                 Intent intent = new Intent(ContentsActivity.this, ImmersionHeatCards.class);
+                startActivity(intent);
+            }
+        });
+
+        pinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ContentsActivity.this, PatientInfo.class);
                 startActivity(intent);
             }
         });

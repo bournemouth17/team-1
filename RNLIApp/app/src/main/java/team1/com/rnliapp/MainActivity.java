@@ -16,6 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button nick = (Button)(findViewById(R.id.NickButton));
+        nick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, PatientInfo.class);
+                startActivity(i);
+            }
+        });
 
         Button startButton = (Button)findViewById(R.id.startButton);
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         timerActivity();
                     }
-                }, 3000, 3000);
+
+                }, 36000, 36000);
             }
         });
 
@@ -41,18 +50,11 @@ public class MainActivity extends AppCompatActivity {
         //TO TEST, DELETE AFTER
         Intent in = new Intent(MainActivity.this, ReassessNotifActivity.class);
         startActivity(in);
-        Button nickButton = (Button)(findViewById(R.id.NickButton));
-        nickButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, InitialPatientCheck.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private void launchMainNavigationActivity() {
-        Intent intent = new Intent(this, ContentsActivity.class);
+        Intent intent = new Intent(MainActivity.this, InitialPatientCheck.class);
         startActivity(intent);
     }
 

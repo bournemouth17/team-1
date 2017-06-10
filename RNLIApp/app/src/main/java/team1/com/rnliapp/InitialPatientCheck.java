@@ -26,6 +26,8 @@ public class InitialPatientCheck extends AppCompatActivity {
     Button submitButton;
     Button startTimerButton;
     Button stopTimerButton;
+    Button resetButton;
+    CountDownTimer countdownTimer;
     static int[] suggestion;
 
     int count = 0;
@@ -59,7 +61,9 @@ public class InitialPatientCheck extends AppCompatActivity {
         submitButton = (Button)(findViewById((R.id.submitButton)));
         startTimerButton = (Button)(findViewById(R.id.startTimerButton));
         stopTimerButton = (Button)(findViewById(R.id.stopTimerButton));
+        resetButton = (Button)(findViewById(R.id.resetButton));
         inputText = (EditText)(findViewById(R.id.editText));
+        resetButton.setVisibility(View.INVISIBLE);
         inputText.setVisibility(View.INVISIBLE);
         startButton.setVisibility(View.INVISIBLE);
         submitButton.setVisibility(View.INVISIBLE);
@@ -84,7 +88,7 @@ public class InitialPatientCheck extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                new CountDownTimer(10000, 50) {
+                countdownTimer = new CountDownTimer(10000, 50) {
 
                     public void onTick(long millisUntilFinished) {
                         questionBox.setText("" + millisUntilFinished / 1000);
@@ -92,7 +96,30 @@ public class InitialPatientCheck extends AppCompatActivity {
 
                     public void onFinish() {
                         questionBox.setText("Timer done. Enter breath count here");
-                        startButton.setVisibility(View.INVISIBLE);
+                        resetButton.setVisibility(View.INVISIBLE);
+                        submitButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
+
+                resetButton.setVisibility(View.VISIBLE);
+                startButton.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                countdownTimer.cancel();
+                countdownTimer = new CountDownTimer(10000, 50) {
+
+                    public void onTick(long millisUntilFinished) {
+                        questionBox.setText("" + millisUntilFinished / 1000);
+                    }
+
+                    public void onFinish() {
+                        questionBox.setText("Timer done. Enter breath count here");
+                        resetButton.setVisibility(View.INVISIBLE);
                         submitButton.setVisibility(View.VISIBLE);
                     }
                 }.start();
@@ -111,12 +138,13 @@ public class InitialPatientCheck extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try{
-                    buttonClick(Integer.parseInt(inputText.getText().toString())*6);
-                    submitButton.setVisibility(View.INVISIBLE);
                     inputText.setVisibility(View.INVISIBLE);
                     questionBox.setVisibility(View.VISIBLE);
+                    buttonClick(Integer.parseInt(inputText.getText().toString())*6);
+                    submitButton.setVisibility(View.INVISIBLE);
                 }catch(NumberFormatException nfe){
                     inputText.setText("Please enter a valid number");
+
                 }
 
             }

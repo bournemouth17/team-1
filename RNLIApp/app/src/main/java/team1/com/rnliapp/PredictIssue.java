@@ -36,8 +36,8 @@ public class PredictIssue {
           boolean match = true;
           for(int j=0; j<12; j++){
               if(j==10){
-                  if(patient[j]<30 && patient[j]>6 && card[i][j]<30 && card[i][j]>6){}
-                  else if(patient[j]<=6 && patient[j]>=0 && card[i][j]<=6 && card[i][j]>=0){}
+                  if(patient[j]<30 && patient[j]>12 && card[i][j]<30 && card[i][j]>12){}
+                  else if(patient[j]<=12 && patient[j]>=0 && card[i][j]<=12 && card[i][j]>=0){}
                   else if(patient[j]>30 && card[i][j]>30){}
                   else{
                       result[i] = 0;

@@ -15,6 +15,9 @@ public class IllnessCards extends AppCompatActivity {
         this.setListeners();
     }
 
+    /**
+     * set the on click listeners for each of the buttons
+     */
     protected void setListeners(){
         Button card4 = (Button)(findViewById(R.id.card4));
         Button card5 = (Button)(findViewById(R.id.card5));

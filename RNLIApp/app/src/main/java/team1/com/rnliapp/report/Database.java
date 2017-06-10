@@ -60,7 +60,7 @@ public class Database {
 
     public void createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
         int incidentId = getIncidentId();
-        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ incidentId +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"')");
+        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`, `medicalHistory`, `lastMeal`) VALUES("+ incidentId +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"', '" + patient.getMedicalHistory() +"')");
         executeUpdate("INSERT INTO allergy(`incidentId`,`title`,`medication`) VALUES("+ incidentId +", '" + allergy.getTitle() +"', '" + allergy.getMedication() +"')");
         executeUpdate("INSERT INTO medicineAdministered(`incidentId`,`name`,`time`,`dose`) VALUES("+ incidentId +", '" + dosage.getName() +"', '" + dosage.getDatetime() +"', '" + dosage.getDose() +"')");
         executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ incidentId +", '" + description +"')");
@@ -79,14 +79,14 @@ public class Database {
         return ++incidentId;
     }
 
-    /*public static void main(String args[]){
-        String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
-        String dbUser = "harvey";
-        String dbPass = "password";
-        Database db = new Database(dbURL, dbUser, dbPass);
-        Patient pat = new Patient("Harvey Ives", ", Bournemouth", "01202", "None", "Ice Cream");
-        Allergy allergy = new Allergy("Hayfever", "Nasal Spray");
-        MedicineAdministered dosage = new MedicineAdministered("Paracetemol", "400mg");
-        db.createIncident("test", pat, allergy, dosage);
-    }*/
+//    public static void main(String args[]){
+//        String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
+//        String dbUser = "harvey";
+//        String dbPass = "password";
+//        Database db = new Database(dbURL, dbUser, dbPass);
+//        Patient pat = new Patient("Leon Watts", ", Bournemouth", "01202222222", "None", "Ice Cream");
+//        Allergy allergy = new Allergy("Hayfever", "Nasal Spray");
+//        MedicineAdministered dosage = new MedicineAdministered("Paracetemol", "400mg");
+//        db.createIncident("Fell off of pier", pat, allergy, dosage);
+//    }
 }

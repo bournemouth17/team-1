@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.Window;
+import team1.com.rnliapp.report.*;
 
 public class PatientInfo extends AppCompatActivity {
 

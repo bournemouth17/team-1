@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         timerActivity();
                     }
+
                 }, 36000, 36000);
             }
         });
@@ -49,18 +50,11 @@ public class MainActivity extends AppCompatActivity {
         //TO TEST, DELETE AFTER
         Intent in = new Intent(MainActivity.this, ReassessNotifActivity.class);
         startActivity(in);
-        Button nickButton = (Button)(findViewById(R.id.NickButton));
-        nickButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, InitialPatientCheck.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private void launchMainNavigationActivity() {
-        Intent intent = new Intent(this, ContentsActivity.class);
+        Intent intent = new Intent(MainActivity.this, InitialPatientCheck.class);
         startActivity(intent);
     }
 

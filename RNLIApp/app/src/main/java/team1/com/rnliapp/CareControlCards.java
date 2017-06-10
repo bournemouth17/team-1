@@ -26,6 +26,7 @@ public class CareControlCards extends AppCompatActivity {
             public void onClick(View view) {
                 //open card 1
                 Intent intent = new Intent(CareControlCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",1);
                 startActivity(intent);
             }
         });

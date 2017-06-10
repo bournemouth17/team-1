@@ -79,7 +79,7 @@ public class Database {
         return ++incidentId;
     }
 
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
         String dbUser = "harvey";
         String dbPass = "password";
@@ -88,5 +88,5 @@ public class Database {
         Allergy allergy = new Allergy("Hayfever", "Nasal Spray");
         MedicineAdministered dosage = new MedicineAdministered("Paracetemol", "400mg");
         db.createIncident("test", pat, allergy, dosage);
-    }
+    }*/
 }

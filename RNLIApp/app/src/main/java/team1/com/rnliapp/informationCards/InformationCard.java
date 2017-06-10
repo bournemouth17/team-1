@@ -112,7 +112,8 @@ public class InformationCard {
 
     public String getBranchName(int branchIndex) {
         if(branchIndex < branches.size()) {
-            return branches.keySet().toArray(new String[branches.size()])[branchIndex];
+            String[] keys = branches.keySet().toArray(new String[branches.keySet().size()]);
+            return keys[branchIndex];
         }
         return null;
     }
@@ -123,7 +124,8 @@ public class InformationCard {
 
     public String[] getBranchSteps(int branchIndex) {
         if(branchIndex < branches.size()) {
-            return branches.get(branchIndex).toArray(new String[branches.size()]);
+            List<String> steps = branches.get(getBranchName(branchIndex));
+            return steps.toArray(new String[steps.size()]);
         }
         return null;
     }

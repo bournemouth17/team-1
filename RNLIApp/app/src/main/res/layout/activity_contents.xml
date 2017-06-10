@@ -7,6 +7,7 @@
     tools:context="team1.com.rnliapp.ContentsActivity">
 
 
+
     <Button
         android:id="@+id/lightBlueButton"
         android:layout_width="165dp"

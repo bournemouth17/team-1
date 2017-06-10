@@ -22,7 +22,8 @@
         <activity android:name=".CareControlCards" />
         <activity android:name=".IllnessCards" />
         <activity android:name=".InjuryActivity" />
-        <activity android:name=".ImmersionHeatCards"></activity>
+        <activity android:name=".ImmersionHeatCards" />
+        <activity android:name=".PatientInfo"></activity>
     </application>
 
 </manifest>

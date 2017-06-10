@@ -19,6 +19,16 @@ public class MainActivity extends AppCompatActivity {
                 launchMainNavigationActivity();
             }
         });
+
+        Button b = (Button)(findViewById(R.id.button2));
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, PatientInfo.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     private void launchMainNavigationActivity() {

@@ -23,7 +23,8 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.958" />
+        app:layout_constraintHorizontal_bias="0.958"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/greenButton"
@@ -40,13 +41,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.041" />
+        app:layout_constraintHorizontal_bias="0.041"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/suggestionButton"
         android:layout_width="344dp"
         android:layout_height="75dp"
-        android:text="Suggestion: Card x - Desc."
+        android:text="Suggestion: Desc."
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_red_dark"
@@ -56,7 +58,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/orangeButton"
@@ -73,7 +76,8 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.958" />
+        app:layout_constraintHorizontal_bias="0.958"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/darkBlueButton"
@@ -92,7 +96,8 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/pinkButton"
@@ -109,6 +114,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.503" />
+        app:layout_constraintHorizontal_bias="0.503"
+        android:textSize="22sp"/>
 
 </android.support.constraint.ConstraintLayout>

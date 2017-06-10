@@ -17,6 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainNavigationActivity" />
+        <activity android:name=".InformationCardDisplay" />
+        <activity android:name=".ContentsActivity" />
+        <activity android:name=".CareControlCards" />
+        <activity android:name=".IllnessCards" />
+        <activity android:name=".InjuryActivity" />
+        <activity android:name=".ImmersionHeatCards"></activity>
         <activity android:name=".InitialPatientCheck"></activity>
         <activity android:name=".InformationCardDisplay"></activity>
         <activity android:name=".ContentsActivity"></activity>

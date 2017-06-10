@@ -20,7 +20,7 @@
         <activity android:name=".InitialPatientCheck" />
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
-        <activity android:name=".BreathTimer"></activity>
+        <activity android:name=".BreathTimer" />
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
         <activity android:name=".CareControlCards" />
@@ -28,11 +28,12 @@
         <activity android:name=".InjuryActivity" />
         <activity android:name=".ImmersionHeatCards" />
         <activity android:name=".PatientInfo" />
-        <activity android:name=".ReassessNotifActivity"></activity>
-        <activity android:name=".ImmersionHeatCards"></activity>
-        <activity android:name=".InitialPatientCheck"></activity>
-        <activity android:name=".InformationCardDisplay"></activity>
-        <activity android:name=".ContentsActivity"></activity>
+        <activity android:name=".ReassessNotifActivity" />
+        <activity android:name=".ImmersionHeatCards" />
+        <activity android:name=".InitialPatientCheck" />
+        <activity android:name=".InformationCardDisplay" />
+        <activity android:name=".ContentsActivity" />
+        <activity android:name=".PersonalInfo2"></activity>
     </application>
 
 </manifest>

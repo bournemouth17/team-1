@@ -33,7 +33,7 @@
             <EditText
                 android:id="@+id/nameBox"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
@@ -46,7 +46,7 @@
             <EditText
                 android:id="@+id/DOBBox"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
@@ -72,7 +72,7 @@
             <EditText
                 android:id="@+id/telephoneBox"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
                 android:ems="10"
                 android:inputType="textMultiLine" />
 
@@ -103,6 +103,7 @@
                 android:inputType="textMultiLine" />
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Dosage:"

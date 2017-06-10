@@ -34,7 +34,7 @@ public class PatientInfo extends AppCompatActivity {
         EditText dose = (EditText) (findViewById(R.id.dosageBox));
 
         //creating database connection
-        String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
+       /* String dbURL = "jdbc:mysql://52.17.3.37:3306/rnli";
         String dbUser = "harvey";
         String dbPass = "password";
         Database db = new Database(dbURL, dbUser, dbPass);
@@ -52,7 +52,7 @@ public class PatientInfo extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+        toast.show();*/
     }
 
 

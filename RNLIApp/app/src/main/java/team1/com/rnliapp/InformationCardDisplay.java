@@ -26,12 +26,16 @@ public class InformationCardDisplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_card_display);
+        //Gets the text views for displaying information and the layout to add the buttons too.
         TextView cardNameDisplay = (TextView) findViewById(R.id.cardNameDisplay), markersDisplay = (TextView) findViewById(R.id.attributesDisplay);
         branchButtonLayout = (LinearLayout) findViewById(R.id.branchButtonLayout);
+        //Gets the card number requested by the previous activity.
         int cardNumber = getIntent().getIntExtra("CARD_NUMBER", 0);
         try {
+            //Formats filename and uses parser to get the requested card from its file.
             String cardName = "Card_" + cardNumber;
             currentCard = InformationCardParser.getInstance().parseCardFromFile(cardName, getBaseContext());
+            //Sets the card name display and the markers display on the GUI interface.
             cardNameDisplay.setText(currentCard.getInformationCardName());
             String[] markers = currentCard.getMarkers();
             String markersString = "";
@@ -48,8 +52,9 @@ public class InformationCardDisplay extends AppCompatActivity {
         }
     }
 
+    //Currently very inflexibly generates some buttons to fit the number of branches.
     private void branchButtonGeneration(int numberOfBranches) {
-        if(numberOfBranches <= 0) return;
+        if(numberOfBranches <= 0) return; //Checking if number of branches is valid
         else if(numberOfBranches == 1)  {
             displayBranchSteps(0);
         } else {
@@ -58,8 +63,11 @@ public class InformationCardDisplay extends AppCompatActivity {
         }
     }
 
+    //Runs through the steps in a given branch and step by step displays the step's information on a button
+    //Before looping back to the contents screen.
     private void displayBranchSteps(int branchIndex) {
         branchButtonLayout.removeAllViews();
+        //Gets the branch's steps and sets up the button to display them.
         final String[] branchSteps = currentCard.getBranchSteps(branchIndex);
         final Button currentButton = new Button(this);
         currentButton.setText(branchSteps[0]);
@@ -67,7 +75,9 @@ public class InformationCardDisplay extends AppCompatActivity {
         currentButton.setTextSize(24);
         currentButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { //TODO Add in the markers and such
+            public void onClick(View view) {
+                //Checks for valid counter value before changing text to next step and incrementing counter
+                //Otherwise counter is reset and the Contents activity page is loaded.
                 if(currentBranchStepCounter < branchSteps.length - 1) {
                     currentBranchStepCounter++;
                     currentButton.setText(branchSteps[currentBranchStepCounter]);
@@ -81,6 +91,7 @@ public class InformationCardDisplay extends AppCompatActivity {
         branchButtonLayout.addView(currentButton);
     }
 
+    //Adds a button to the button layout and sets the onClick to run the display method for the given branch index.
     private void addButton(String buttonText, final int branchIndex) {
         Button newButton = new Button(this);
         newButton.setText(buttonText);

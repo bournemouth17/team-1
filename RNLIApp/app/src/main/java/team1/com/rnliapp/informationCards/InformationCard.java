@@ -30,59 +30,33 @@ public class InformationCard {
         this.branches = branches.size() > 0 ? branches : new Hashtable<String, List<String>>();
     }
 
+    //Checks for invalid length info before assigning to the variable.
     public void addImportantInfo(String importantInfo) {
         if(importantInfo.length() > 1) {
             this.importantInfo = importantInfo;
         }
     }
 
+    //Checks for duplicate and invalid data length before adding to the list.
     public void addMarker(String marker) {
         if(!marker.contains(marker.toUpperCase()) && marker.length() > 0) {
             markers.add(marker.toUpperCase());
         }
     }
 
-    /*public void addMarkers(String[] markers) {
-        for(int i = 0; i < markers.length; i++) {
-            addMarker(markers[i]);
-        }
-    }
-
-    public void addMarkers(List<String> markers) {
-        for(int i = 0; i < markers.size(); i++) {
-            addMarker(markers.get(i));
-        }
-    }*/
-
+    //Checks for duplicates and for invalid data input before adding to the list.
     public void addNote(String note) {
         if(!notes.contains(note.toUpperCase()) && note.length() > 1) {
             notes.add(note.toUpperCase());
         }
     }
 
-    /*public void addNotes(String[] notes) {
-        for(int i = 0; i < notes.length; i++) {
-            addNote(notes[i]);
-        }
-    }
-
-    public void addNotes(List<String> notes) {
-        for(int i = 0; i < notes.size(); i++) {
-            addNote(notes.get(i));
-        }
-    }*/
-
+    //Checks for duplicate branch and invalid branch step length before adding entry.
     public void addBranch(String branchName, String[] branchSteps) {
         if(!branches.containsKey(branchName.toUpperCase()) && branchSteps.length != 0) {
             branches.put(branchName.toUpperCase(), new ArrayList<>(Arrays.asList(branchSteps)));
         }
     }
-
-    /*public void addBranch(String branchName, List<String> branchSteps) {
-        if(!branches.containsKey(branchName.toUpperCase()) && branchSteps.size() != 0) {
-            branches.put(branchName.toUpperCase(), branchSteps);
-        }
-    }*/
 
     public String getInformationCardName() {
         return informationCardName;

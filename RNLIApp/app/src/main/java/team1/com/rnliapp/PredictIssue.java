@@ -30,11 +30,21 @@ public class PredictIssue {
     int[] result = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     ArrayList<Integer> cards = new ArrayList<Integer>();
 
+    //checks to see if the symptoms inputted match any illness/cause
     protected int[] compareArray(){
-        System.out.println("COMPARE ARRAY");
       for(int i=0; i<19; i++){
           boolean match = true;
           for(int j=0; j<12; j++){
+              if(j==10){
+                  if(patient[j]<30 && patient[j]>12 && card[i][j]<30 && card[i][j]>12){}
+                  else if(patient[j]<=12 && patient[j]>=0 && card[i][j]<=12 && card[i][j]>=0){}
+                  else if(patient[j]>30 && card[i][j]>30){}
+                  else{
+                      result[i] = 0;
+                      match = false;
+                      break;
+                  }
+              }
               if(patient[j] != card[i][j]){
                   result[i] = 0;
                   match = false;
@@ -54,6 +64,7 @@ public class PredictIssue {
       return finalResult;
     }
 
+    //adds a symptom to the patient's profile
     protected void addInput(int index, int result){
         System.out.println("ADD INPUT BEFORE: " + index);
         patient[index] = result;

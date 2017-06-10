@@ -39,19 +39,25 @@ public class InitialPatientCheck extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 buttonClick(1);
+                System.out.println("YES BUTTON");
             }
         });
         noButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 buttonClick(0);
+                System.out.println("NO BUTTON");
             }
         });
     }
 
     private void buttonClick(int result){
+        System.out.println("COUNT: " + count);
         issue.addInput(count, result);
-        if(count == 12) count = 0;
+        if(count == 11){
+            int[] test = issue.compareArray();
+            count = 0;
+        }
         else count++;
 
         questionBox.setText(questions[count]);

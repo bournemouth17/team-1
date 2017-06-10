@@ -110,6 +110,13 @@ public class InformationCard {
         return null;
     }
 
+    public String getBranchName(int branchIndex) {
+        if(branchIndex < branches.size()) {
+            return branches.keySet().toArray(new String[branches.size()])[branchIndex];
+        }
+        return null;
+    }
+
     public int getBranchCount() {
         return branches.size();
     }

@@ -9,6 +9,7 @@ public class Database {
     private static Connection connection = null;
     private static Statement statement = null;
 
+    //Setting up the SQL server database connection and error checking the connection as it goes.
     public Database(String url, String user, String pass){
         System.out.println("-------- MySQL JDBC Connection Testing ------------");
         try {
@@ -35,6 +36,8 @@ public class Database {
             System.out.println("CONNECTION FAILED");
         }
     }
+
+    //Sends a given sql query to the database and returns the result to the caller.
     public ResultSet executeQuery(String sql){
         try{
             statement = connection.createStatement();
@@ -47,6 +50,8 @@ public class Database {
         }
         return null;
     }
+
+    //Updates the SQL database
     public void executeUpdate(String sql){
         try{
             statement = connection.createStatement();
@@ -58,6 +63,7 @@ public class Database {
         }
     }
 
+    //Takes information on the patient, and their medical before formatting it and sending it as a SQL query to the database to be stored.
     public int createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
         int incidentId = getIncidentId();
         executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`, `medicalHistory`, `lastMeal`) VALUES("+ incidentId +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"', '" + patient.getMedicalHistory() +"')");
@@ -67,6 +73,7 @@ public class Database {
         return incidentId;
     }
 
+    //Gets the ID that links the patient to the medical records and to the incident that happened.
     private int getIncidentId(){
         int incidentId = 0;
         try{

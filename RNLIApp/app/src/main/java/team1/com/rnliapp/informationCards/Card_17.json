@@ -1,0 +1,32 @@
+{
+  "card_name": "Drowning and Near Drowning",
+  "card_number": 17,
+  "markers": [ "Agitation, cough - may be frothy / blood phlegm", "Breathing rate 30+, unable to complete sentence", "Pale and cold", "Loss of consciousness A-V-P-U" ],
+  "branches": [
+    {
+      "branch_name": "Unconscious Drowned",
+      "branch_steps": [
+        "Drowned patients need rapid evacuation from water."
+		"Carry out survey."
+		"If breathing maintain airway using recovery position. See CARD 1 - IMMERSION."
+		"If not breathing start CPR. See CARD 2"
+		"Rapid head down evacuation to hospital"
+      ]
+    },
+    {
+      "branch_name": "Conscious Near Drowning",
+      "branch_steps": [
+        "Rapid evacuation from water and reassure."
+		"If BIG SICK give 15 litres/min oxygen via free flow mask."
+		"In ALBs insulate from further heat loss."
+		"Rapid evacuation to hospital."
+		"Make patients aware of potential for late onset near drowning."
+      ]
+    }
+  ]
+  "notes": [
+	"Always attempt CPR unless submersion time is > 90 minutes, the body is decomposed or is a victim of non-survivable trauma."
+	"Have suction ready or be ready to clear airway - vomiting is usual."
+	"Suspect patient to also have hypothermia if immersion > 30 minutes."
+  ]
+}

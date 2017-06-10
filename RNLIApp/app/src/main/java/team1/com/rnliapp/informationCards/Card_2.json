@@ -1,0 +1,35 @@
+{
+  "card_name": "Resuscitation & Ventilatory Support",
+  "card_number": 2,
+  "markers": [ "Response U", "Breathing Rate 0 or 6", "Blue Colour" ],
+  "branches": [
+    {
+      "branch_name": "Breathing 6 per Min",
+      "branch_steps": [
+        "Give Ventilatory Support.",
+        "Consider use of plastic airway.",
+        "Assist breathing using bag & mask & 15 litres/min oxygen.",
+        "Monitor closely. Anticipate patient may stop breathing."
+      ]
+    },
+    {
+      "branch_name": "No Breathing - CPR",
+      "branch_steps": [
+        "Open Airway; Consider plastic airway.",
+        "If patient is a child, or adult victim of lack of oxygen give 5 breaths. Use bag and mask, 15 litres/min oxygen.",
+        "30 chest compressions at a rate of 100-120 per minute.",
+        "Give 2 breaths. use bag and mask, 15 litres/min oxygen."
+		"Continue 30 compressions to 2 breaths only stopping if obvious return of sign of life."
+		"If patient recovers manage unconsciousness. See Card 1."
+      ]
+    }
+  ]
+  "notes": [
+	"Have suction ready to hand if carried and be ready to clear airway."
+	"Use resuscitation face mask or bag and mask and 15 litres/min oxygen."
+	"Transport slightly head down except: "
+	"Transport slightly head up if head or brain injury."
+	"Transport level if diving illness related."
+	"Always attempt CPR unless submersion time is more than 90 minutes, patient is decomposed or is a victim of non-survivable trauma."
+  ]
+}

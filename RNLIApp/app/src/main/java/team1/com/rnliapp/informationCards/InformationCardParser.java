@@ -28,33 +28,34 @@ public class InformationCardParser {
 
     private InformationCardParser() {}
 
+    //Takes the filename of a json file and parses it into a InformationCard using org.json.simple.
     public InformationCard parseCardFromFile(String nameOfCard, Context context) throws ParseException, IOException {
+        //Error checking
         if(nameOfCard.length() < 1 ) return null;
         if(nameOfCard.contains(".json")) nameOfCard = nameOfCard.substring(0, nameOfCard.length() - 5);
         InformationCard card;
+        //Getting the file using the Asset manager and then parsing the resulting file.
         JSONParser parser = new JSONParser();
         AssetManager am = context.getAssets();
         Object object = parser.parse(new BufferedReader(new InputStreamReader(am.open(nameOfCard + ".json"))));
         JSONObject jsonObject = (JSONObject) object;
+        //Getting the information cards name and number.
         String cardName = (String) jsonObject.get("card_name");
-        System.out.println("Name: " + cardName);
         long cardNumber = (Long) jsonObject.get("card_number");
         card = new InformationCard(cardName, (int)cardNumber);
-        System.out.println("Number: " + cardNumber + "\nMarkers:");
+        //Getting each of them markers from the json array
         JSONArray markers = (JSONArray) jsonObject.get("markers");
         for(int i = 0; i < markers.size(); i++) {
-            System.out.println(markers.get(i));
             card.addMarker((String) markers.get(i));
         }
+        //Breaking down each branch into its name and steps.
         JSONArray branches = (JSONArray) jsonObject.get("branches");
         for(int i = 0; i < branches.size(); i++) {
             JSONObject branch = (JSONObject) branches.get(i);
             String branchName = (String) branch.get("branch_name");
-            System.out.println(branchName + "'s Steps:");
             JSONArray steps = (JSONArray) branch.get("branch_steps");
             String[] stepArray = new String[steps.size()];
             for(int j = 0; j < steps.size(); j++) {
-                System.out.println((j + 1) + ") " + steps.get(j));
                 stepArray[j] = (String) steps.get(j);
             }
             card.addBranch(branchName, stepArray);

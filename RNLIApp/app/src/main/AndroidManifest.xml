@@ -17,9 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainNavigationActivity" />
-        <activity android:name=".InitialPatientCheck"></activity>
-        <activity android:name=".InformationCardDisplay"></activity>
-        <activity android:name=".ContentsActivity"></activity>
+        <activity android:name=".InitialPatientCheck" />
+        <activity android:name=".InformationCardDisplay" />
+        <activity android:name=".ContentsActivity" />
+        <activity android:name=".BreathTimer"></activity>
     </application>
 
 </manifest>

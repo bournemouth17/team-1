@@ -22,12 +22,12 @@ public class ReassessNotifActivity extends AppCompatActivity {
             }
         });
 
-        Button okButton = (Button)(findViewById(R.id.okButton));
-        okButton.setOnClickListener(new View.OnClickListener() {
+        Button okayButton = (Button)findViewById(R.id.okButton);
+        okayButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ReassessNotifActivity.this, InitialPatientCheck.class);
-                startActivity(intent);
+            public void onClick(View view){
+                Intent in = new Intent(ReassessNotifActivity.this, InitialPatientCheck.class);
+                startActivity(in);
             }
         });
     }

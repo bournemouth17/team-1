@@ -24,6 +24,7 @@ public class InitialPatientCheck extends AppCompatActivity {
     Button submitButton;
     Button startTimerButton;
     Button stopTimerButton;
+    static int[] suggestion;
 
     int count = 0;
     PredictIssue issue = new PredictIssue();
@@ -129,6 +130,8 @@ public class InitialPatientCheck extends AppCompatActivity {
                 int value = 0;
                 if(elapsedSec>=3) value = 1;
                 buttonClick(value);
+                Intent intent = new Intent(InitialPatientCheck.this, ContentsActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -139,7 +142,16 @@ public class InitialPatientCheck extends AppCompatActivity {
         System.out.println("COUNT: " + count);
         issue.addInput(count, result);
         if(count == 11){
-            int[] test = issue.compareArray();
+            System.out.println("IF");
+            suggestion = issue.compareArray();
+            System.out.println("MIDDLE");
+            if(suggestion.length == 0) {
+                ContentsActivity.setCard(-1);
+            }
+            else {
+                ContentsActivity.setCard(suggestion[0]);
+            }
+            System.out.println("END");
             count = 0;
         }
         else count++;
@@ -151,5 +163,9 @@ public class InitialPatientCheck extends AppCompatActivity {
         else if(count == 11){
             startTimerButton.setVisibility(View.VISIBLE);
         }
+    }
+
+    public static int getSuggestion(){
+        return suggestion[0];
     }
 }

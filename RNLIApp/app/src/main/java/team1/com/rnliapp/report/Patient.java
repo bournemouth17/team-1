@@ -9,7 +9,7 @@ import java.util.Stack;
 public class Patient {
     private String name, address, telephoneNumber, medicalHistory, lastMeal;
 
-    public Patient(String name, String address, String telephoneNumber, String lastMeal){
+    public Patient(String name, String address, String telephoneNumber, String medicalHistory, String lastMeal){
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;

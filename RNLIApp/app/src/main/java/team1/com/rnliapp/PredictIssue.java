@@ -31,6 +31,7 @@ public class PredictIssue {
     ArrayList<Integer> cards = new ArrayList<Integer>();
 
     protected int[] compareArray(){
+        System.out.println("COMPARE ARRAY");
       for(int i=0; i<19; i++){
           boolean match = true;
           for(int j=0; j<12; j++){
@@ -46,7 +47,7 @@ public class PredictIssue {
       }
       int[] finalResult = new int[cards.size()];
       for(int i=0; i<cards.size(); i++){
-          finalResult[i] = cards.get(i);
+          finalResult[i] = cards.get(i)+1;
           System.out.print(finalResult[i] + ", ");
       }
       System.out.println();

@@ -1,0 +1,34 @@
+{
+  "card_name": "Cold and Hypothermia",
+  "card_number": 18,
+  "markers": [ "Cold if <30 mins immersion, shivering, conscious, lucid", 
+				"Hypothermia if >30 mins immersion, loos of memory, loss of consciousness AVPU, shivering replaced by spasm and rigidity" ],
+  "branches": [
+    {
+      "branch_name": "Unconscious Hypothermic BIG SICK",
+      "branch_steps": [
+        "If not breathing, start CPR. See CARD 2."
+		"If breathing maintain airway using head/tilt, chin lift and palce in recovery position. See CARD 1."
+		"Consider plastic airway. Give 15 litres/min oxygen via free flow mask."
+		"Insulate with blankets and cover head. Do not actively re-warm."
+		"Rapid head down evacuation to hospital."
+      ]
+    },
+    {
+      "branch_name": "Conscious Cold LITTLE SICK.",
+      "branch_steps": [
+        "Insulate from further heat loss using blankets and cover head."
+		"Protect from elements and furhter cooling."
+		"In ALBs remove wet clothing and wrap in blankets. Give warm sweet drinks."
+		"In ILBs insulate from further heat loss."
+		"Rational, shivering patients can be rewarmed ashore."
+      ]
+    }
+  ]
+  "notes": [
+	"NEVER: actively rewarm unconscious patients. Just stop further heat loss."
+	"Conscious patients can be rewarmed - SAT in a warm shower."
+	"Supervise rewarming at ALL times."
+	"Watch for post rescue collapse, and if occurs go to CARD 1 OR 2."
+  ]
+}

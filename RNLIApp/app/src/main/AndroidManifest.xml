@@ -25,6 +25,10 @@
         <activity android:name=".ImmersionHeatCards" />
         <activity android:name=".PatientInfo" />
         <activity android:name=".ReassessNotifActivity"></activity>
+        <activity android:name=".ImmersionHeatCards"></activity>
+        <activity android:name=".InitialPatientCheck"></activity>
+        <activity android:name=".InformationCardDisplay"></activity>
+        <activity android:name=".ContentsActivity"></activity>
     </application>
 
 </manifest>

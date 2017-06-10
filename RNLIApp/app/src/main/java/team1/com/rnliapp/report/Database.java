@@ -84,7 +84,7 @@ public class Database {
         String dbUser = "harvey";
         String dbPass = "password";
         Database db = new Database(dbURL, dbUser, dbPass);
-        Patient pat = new Patient("Harvey", ", Bournemouth", "01202", "Ice Cream");
+        Patient pat = new Patient("Harvey Ives", ", Bournemouth", "01202", "None", "Ice Cream");
         Allergy allergy = new Allergy("Hayfever", "Nasal Spray");
         MedicineAdministered dosage = new MedicineAdministered("Paracetemol", "400mg");
         db.createIncident("test", pat, allergy, dosage);

@@ -71,6 +71,14 @@ public class InitialPatientCheck extends AppCompatActivity {
         stopTimerButton.setVisibility(View.INVISIBLE);
         chronometer.setVisibility(View.INVISIBLE);
 
+        inputText.setOnClickListener((new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                inputText.setText("");
+            }
+
+        }));
+
         yesButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -138,12 +146,12 @@ public class InitialPatientCheck extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try{
+                    buttonClick(Integer.parseInt(inputText.getText().toString())*6);
                     inputText.setVisibility(View.INVISIBLE);
                     questionBox.setVisibility(View.VISIBLE);
-                    buttonClick(Integer.parseInt(inputText.getText().toString())*6);
                     submitButton.setVisibility(View.INVISIBLE);
                 }catch(NumberFormatException nfe){
-                    inputText.setText("Please enter a valid number");
+                    questionBox.setText("Please enter a valid number");
 
                 }
 

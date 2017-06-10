@@ -36,8 +36,9 @@ public class PredictIssue {
           boolean match = true;
           for(int j=0; j<12; j++){
               if(j==10){
-                  if(patient[j]<30 && patient[j]>12 && card[i][j]<30 && card[i][j]>12){}
-                  else if(patient[j]<=12 && patient[j]>=0 && card[i][j]<=12 && card[i][j]>=0){}
+                    System.out.println("IF");
+                  if(patient[j]<=12 && card[i][j]<=12){System.out.println("MID");}
+                  else if(patient[j]<30 && card[i][j]<30){}
                   else if(patient[j]>30 && card[i][j]>30){}
                   else{
                       result[i] = 0;
@@ -45,7 +46,7 @@ public class PredictIssue {
                       break;
                   }
               }
-              if(patient[j] != card[i][j]){
+              else if(patient[j] != card[i][j]){
                   result[i] = 0;
                   match = false;
                   break;
@@ -66,9 +67,7 @@ public class PredictIssue {
 
     //adds a symptom to the patient's profile
     protected void addInput(int index, int result){
-        System.out.println("ADD INPUT BEFORE: " + index);
         patient[index] = result;
-        System.out.println("ADD INPUT AFTER: " + index);
         System.out.println("RESULT: " + patient[index]);
     }
 

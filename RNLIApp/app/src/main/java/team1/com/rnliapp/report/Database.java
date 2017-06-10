@@ -59,10 +59,11 @@ public class Database {
     }
 
     public void createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
-        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"')");
-        executeUpdate("INSERT INTO patient(`incidentId`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + patient.getName() +"', '" + patient.getAddress() +"')");
-        executeUpdate("INSERT INTO allergy(`incidentId`,`name`,`time`,`dose`) VALUES("+ getIncidentId() +", '" + dosage.getName() +"', '" + dosage.getDatetime() +"', '" + dosage.getDose() +"')");
-        executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ getIncidentId() +", '" + description +"')");
+        int incidentId = getIncidentId();
+        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ incidentId +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"')");
+        executeUpdate("INSERT INTO allergy(`incidentId`,`title`,`medication`) VALUES("+ incidentId +", '" + allergy.getTitle() +"', '" + allergy.getMedication() +"')");
+        executeUpdate("INSERT INTO medicineAdministered(`incidentId`,`name`,`time`,`dose`) VALUES("+ incidentId +", '" + dosage.getName() +"', '" + dosage.getDatetime() +"', '" + dosage.getDose() +"')");
+        executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ incidentId +", '" + description +"')");
     }
 
     private int getIncidentId(){

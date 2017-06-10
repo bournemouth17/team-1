@@ -110,10 +110,15 @@ public class InitialPatientCheck extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                buttonClick(Integer.parseInt(inputText.getText().toString())*6);
-                submitButton.setVisibility(View.INVISIBLE);
-                inputText.setVisibility(View.INVISIBLE);
-                questionBox.setVisibility(View.VISIBLE);
+                try{
+                    buttonClick(Integer.parseInt(inputText.getText().toString())*6);
+                    submitButton.setVisibility(View.INVISIBLE);
+                    inputText.setVisibility(View.INVISIBLE);
+                    questionBox.setVisibility(View.VISIBLE);
+                }catch(NumberFormatException nfe){
+                    inputText.setText("Please enter a valid number");
+                }
+
             }
         });
 

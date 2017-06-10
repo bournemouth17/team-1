@@ -20,7 +20,9 @@
         <activity android:name=".InformationCardDisplay" />
         <activity android:name=".ContentsActivity" />
         <activity android:name=".CareControlCards" />
-        <activity android:name=".IllnessCards"></activity>
+        <activity android:name=".IllnessCards" />
+        <activity android:name=".InjuryActivity" />
+        <activity android:name=".ImmersionHeatCards"></activity>
     </application>
 
 </manifest>

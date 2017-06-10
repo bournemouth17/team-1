@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ContentsActivity extends AppCompatActivity {
+
     Button suggestionButton;
     static int cardSuggestion;
 
@@ -18,6 +19,7 @@ public class ContentsActivity extends AppCompatActivity {
         setSuggestion();
     }
 
+    //sets the card suggestion
     public static void setCard(int suggestion){
         cardSuggestion = suggestion;
     }
@@ -35,6 +37,7 @@ public class ContentsActivity extends AppCompatActivity {
 
 
 
+        //changes the name of the suggested box to correspond with the suggested card
         switch (cardSuggestion) {
             case 1:
                 suggestionButton.setText("SUGGESTION: UNCONCIOUS BREATHING PATIENT CARE");
@@ -103,6 +106,7 @@ public class ContentsActivity extends AppCompatActivity {
 
 
 
+    //sets the on click listeners for each of the buttons on the contents activitiy
     protected void setListeners(){
         suggestionButton = (Button)(findViewById(R.id.suggestionButton));
         Button darkBlueButton = (Button)(findViewById(R.id.darkBlueButton));
@@ -157,6 +161,7 @@ public class ContentsActivity extends AppCompatActivity {
         pinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //open the patient info
                 Intent intent = new Intent(ContentsActivity.this, PatientInfo.class);
                 startActivity(intent);
             }

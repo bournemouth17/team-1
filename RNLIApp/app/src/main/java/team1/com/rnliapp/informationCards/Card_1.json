@@ -1,0 +1,34 @@
+{
+  "card_name": "Care of unconscious breathing patient",
+  "card_number": 1,
+  "markers": [ "Response P or U", "Patient Breathing" ],
+  "branches": [
+    {
+      "branch_name": "Injury",
+      "branch_steps": [
+        "Open airway using jaw thrust prepare suction.",
+        "Consider plastic airway. Give 15 litres/min. Oxygen via free flow mask.",
+        "Treat traumatic injuries. Keep warm with blankets.",
+        "Monitor and evacuate."
+      ]
+    },
+    {
+      "branch_name": "Illness / Immersion",
+      "branch_steps": [
+        "Open airway using head tilt chin lift. Prepare suction.",
+        "Consider plasitc airway. Give 15 litres/min oxygen via free flow mask.",
+        "Place in recovery position and keep warm with blanket.",
+        "Monitor and evacuate."
+      ]
+    }
+  ]
+  "notes": [
+	"If at any point you cannot maintain the airway in an injured patient - choose life over limb and use head tilt / chin lift or the recovery position."
+	"Place pregnant casualties on their left side."
+	"Have suction ready to hand if carried and be ready to clear airway."
+	"Consider use of glucose gel applied to gums for 'illness'."
+	"Transport slightly head down except: "
+	"Trasport head up if head or brain injury."
+	"Transport level if diving illness related."
+  ]
+}

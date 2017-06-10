@@ -35,6 +35,9 @@ public class CareControlCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 2
+                Intent intent = new Intent(CareControlCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",2);
+                startActivity(intent);
 
             }
         });
@@ -43,6 +46,9 @@ public class CareControlCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 3
+                Intent intent = new Intent(CareControlCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",3);
+                startActivity(intent);
             }
         });
     }

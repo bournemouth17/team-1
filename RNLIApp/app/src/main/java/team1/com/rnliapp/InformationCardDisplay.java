@@ -20,19 +20,27 @@ public class InformationCardDisplay extends AppCompatActivity {
 
     private LinearLayout branchButtonLayout;
     private InformationCard currentCard;
-    private int currentBranchStepCounter = 0, currentBranchIndex = 0;
+    private int currentBranchStepCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information_card_display);
-        TextView cardNameDisplay = (TextView) findViewById(R.id.cardNameDisplay);
+        TextView cardNameDisplay = (TextView) findViewById(R.id.cardNameDisplay), markersDisplay = (TextView) findViewById(R.id.attributesDisplay);
         branchButtonLayout = (LinearLayout) findViewById(R.id.branchButtonLayout);
         int cardNumber = getIntent().getIntExtra("CARD_NUMBER", 0);
         try {
             String cardName = "Card_" + cardNumber;
             currentCard = InformationCardParser.getInstance().parseCardFromFile(cardName, getBaseContext());
             cardNameDisplay.setText(currentCard.getInformationCardName());
+            String[] markers = currentCard.getMarkers();
+            String markersString = "";
+            for(int i = 0; i < markers.length; i++) {
+                markersString += markers[i];
+                if(i < markers.length - 1) markersString += ",";
+                else markersString += ".";
+            }
+            markersDisplay.setText(markersString);
             branchButtonGeneration(currentCard.getBranchCount());
         } catch (ParseException | IOException e) {
             //TODO Make this send a toast notification and then loop back to the start.
@@ -59,7 +67,7 @@ public class InformationCardDisplay extends AppCompatActivity {
         currentButton.setTextSize(24);
         currentButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //TODO Add in the markers and such
                 if(currentBranchStepCounter < branchSteps.length - 1) {
                     currentBranchStepCounter++;
                     currentButton.setText(branchSteps[currentBranchStepCounter]);

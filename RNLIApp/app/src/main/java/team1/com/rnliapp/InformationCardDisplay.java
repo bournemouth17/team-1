@@ -1,18 +1,17 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.view.ViewGroup.LayoutParams;
 
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import team1.com.rnliapp.informationCards.InformationCard;
 import team1.com.rnliapp.informationCards.InformationCardParser;
@@ -53,20 +52,25 @@ public class InformationCardDisplay extends AppCompatActivity {
 
     private void displayBranchSteps(int branchIndex) {
         branchButtonLayout.removeAllViews();
-        String[] branchSteps = currentCard.getBranchSteps(branchIndex);
-        for(int i = 0; i < branchSteps.length; i++) {
-            Button currentButton = new Button(this);
-            currentButton.setText(branchSteps[i]);
-            currentButton.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-            currentButton.setTextSize(24);
-            currentButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    branchButtonLayout.removeAllViews();
+        final String[] branchSteps = currentCard.getBranchSteps(branchIndex);
+        final Button currentButton = new Button(this);
+        currentButton.setText(branchSteps[0]);
+        currentButton.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        currentButton.setTextSize(24);
+        currentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(currentBranchStepCounter < branchSteps.length - 1) {
+                    currentBranchStepCounter++;
+                    currentButton.setText(branchSteps[currentBranchStepCounter]);
+                } else {
+                    currentBranchStepCounter = 0;
+                    Intent intent = new Intent(InformationCardDisplay.this, ContentsActivity.class);
+                    startActivity(intent);
                 }
-            });
-            branchButtonLayout.addView(new Button(this));
-        }
+            }
+        });
+        branchButtonLayout.addView(currentButton);
     }
 
     private void addButton(String buttonText, final int branchIndex) {

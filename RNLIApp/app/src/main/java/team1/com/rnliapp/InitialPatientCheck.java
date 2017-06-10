@@ -14,10 +14,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class InitialPatientCheck extends AppCompatActivity {
+    EditText inputText;
     Chronometer chronometer;
-    EditText questionBox;
+    TextView questionBox;
     ImageButton yesButton;
     ImageButton noButton;
     Button startButton;
@@ -46,7 +48,7 @@ public class InitialPatientCheck extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_patient_check);
 
-                questionBox = (EditText) (findViewById(R.id.editText));
+                questionBox = (TextView) (findViewById(R.id.textView));
         questionBox.setText(questions[0]);
         chronometer = (Chronometer) findViewById(R.id.chronometer);
 
@@ -57,6 +59,8 @@ public class InitialPatientCheck extends AppCompatActivity {
         submitButton = (Button)(findViewById((R.id.submitButton)));
         startTimerButton = (Button)(findViewById(R.id.startTimerButton));
         stopTimerButton = (Button)(findViewById(R.id.stopTimerButton));
+        inputText = (EditText)(findViewById(R.id.editText));
+        inputText.setVisibility(View.INVISIBLE);
         startButton.setVisibility(View.INVISIBLE);
         submitButton.setVisibility(View.INVISIBLE);
         startTimerButton.setVisibility(View.GONE);
@@ -98,15 +102,18 @@ public class InitialPatientCheck extends AppCompatActivity {
         questionBox.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                questionBox.setText("");
+                questionBox.setVisibility(View.INVISIBLE);
+                inputText.setVisibility(View.VISIBLE);
             }
         });
 
         submitButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                buttonClick(Integer.parseInt(questionBox.getText().toString())*6);
+                buttonClick(Integer.parseInt(inputText.getText().toString())*6);
                 submitButton.setVisibility(View.INVISIBLE);
+                inputText.setVisibility(View.INVISIBLE);
+                questionBox.setVisibility(View.VISIBLE);
             }
         });
 

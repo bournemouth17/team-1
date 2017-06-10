@@ -11,4 +11,11 @@ public class Allergy {
         this.title = title;
         this.medication = medication;
     }
+
+    public String getTitle(){
+        return title;
+    }
+    public String getMedication(){
+        return medication;
+    }
 }

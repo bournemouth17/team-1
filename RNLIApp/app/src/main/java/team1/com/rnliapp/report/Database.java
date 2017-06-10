@@ -58,9 +58,10 @@ public class Database {
         }
     }
 
-    public void createIncident(String description, Patient pat){
+    public void createIncident(String description, Patient patient, Allergy allergy){
+        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"')");
+        executeUpdate("INSERT INTO allergy(`incidentId`,`title`,`medication`) VALUES("+ getIncidentId() +", '" + allergy.getTitle() +"', '" + allergy.getMedication() +"')");
         executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ getIncidentId() +", '" + description +"')");
-        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + pat.name +"', '" + pat.address +"','" + pat.telephoneNumber +"', '" + pat.lastMeal +"')");
     }
 
     private int getIncidentId(){

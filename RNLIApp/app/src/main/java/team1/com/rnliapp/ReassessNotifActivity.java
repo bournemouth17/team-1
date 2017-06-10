@@ -1,5 +1,6 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,15 @@ public class ReassessNotifActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        Button okButton = (Button)(findViewById(R.id.okButton));
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReassessNotifActivity.this, InitialPatientCheck.class);
+                startActivity(intent);
             }
         });
     }

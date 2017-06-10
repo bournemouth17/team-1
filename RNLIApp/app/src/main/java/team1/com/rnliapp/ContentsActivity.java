@@ -8,27 +8,34 @@ import android.widget.Button;
 
 public class ContentsActivity extends AppCompatActivity {
     Button suggestionButton;
+    static int cardSuggestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contents);
         this.setListeners();
-
+        setSuggestion();
     }
 
+    public static void setCard(int suggestion){
+        cardSuggestion = suggestion;
+    }
     //sets the card to be opened on click of the suggested button
-    public void setSuggestion(final int cardNum){
+    public void setSuggestion(){
+        //suggestionButton.setText(cardNum);
         suggestionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ContentsActivity.this, InformationCardDisplay.class);
-                intent.putExtra("CARD_NUMBER",cardNum);
+                intent.putExtra("CARD_NUMBER",cardSuggestion);
                 startActivity(intent);
             }
         });
 
-        switch (cardNum) {
+
+
+        switch (cardSuggestion) {
             case 1:
                 suggestionButton.setText("SUGGESTION: UNCONCIOUS BREATHING PATIENT CARE");
                 break;

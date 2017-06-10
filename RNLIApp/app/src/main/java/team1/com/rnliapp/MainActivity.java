@@ -6,20 +6,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Button startButton = (Button)findViewById(R.id.startButton);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchMainNavigationActivity();
+                Timer t = new Timer();
+                t.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        timerActivity();
+                    }
+                }, 3000, 3000);
             }
         });
 
+
+
+    }
+
+    public void timerActivity(){
+        //start redo assesment activity
+        //TO TEST, DELETE AFTER
+        Intent in = new Intent(MainActivity.this, ReassessNotifActivity.class);
+        startActivity(in);
         Button nickButton = (Button)(findViewById(R.id.NickButton));
         nickButton.setOnClickListener(new View.OnClickListener(){
             @Override

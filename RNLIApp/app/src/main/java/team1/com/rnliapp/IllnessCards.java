@@ -1,5 +1,6 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 4
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",4);
+                startActivity(intent);
             }
         });
 
@@ -36,6 +40,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 5
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",5);
+                startActivity(intent);
 
             }
         });
@@ -44,6 +51,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 6
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",6);
+                startActivity(intent);
             }
         });
 
@@ -51,6 +61,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 7
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",7);
+                startActivity(intent);
             }
         });
 
@@ -58,6 +71,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 8
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",8);
+                startActivity(intent);
             }
         });
 
@@ -65,6 +81,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 9
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",9);
+                startActivity(intent);
             }
         });
 
@@ -72,6 +91,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 10
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",10);
+                startActivity(intent);
             }
         });
 
@@ -79,6 +101,9 @@ public class IllnessCards extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 11
+                Intent intent = new Intent(IllnessCards.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",11);
+                startActivity(intent);
             }
         });
     }

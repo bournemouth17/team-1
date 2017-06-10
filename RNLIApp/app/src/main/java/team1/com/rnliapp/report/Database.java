@@ -58,12 +58,13 @@ public class Database {
         }
     }
 
-    public void createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
+    public int createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
         int incidentId = getIncidentId();
         executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`, `medicalHistory`, `lastMeal`) VALUES("+ incidentId +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"', '" + patient.getMedicalHistory() +"')");
         executeUpdate("INSERT INTO allergy(`incidentId`,`title`,`medication`) VALUES("+ incidentId +", '" + allergy.getTitle() +"', '" + allergy.getMedication() +"')");
         executeUpdate("INSERT INTO medicineAdministered(`incidentId`,`name`,`time`,`dose`) VALUES("+ incidentId +", '" + dosage.getName() +"', '" + dosage.getDatetime() +"', '" + dosage.getDose() +"')");
         executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ incidentId +", '" + description +"')");
+        return incidentId;
     }
 
     private int getIncidentId(){

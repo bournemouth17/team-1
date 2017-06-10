@@ -58,8 +58,9 @@ public class Database {
         }
     }
 
-    public void createIncident(String description){
+    public void createIncident(String description, Patient pat){
         executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ getIncidentId() +", '" + description +"')");
+        executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + pat.name +"', '" + pat.address +"','" + pat.telephoneNumber +"', '" + pat.lastMeal +"')");
     }
 
     private int getIncidentId(){
@@ -80,6 +81,7 @@ public class Database {
         String dbUser = "harvey";
         String dbPass = "password";
         Database db = new Database(dbURL, dbUser, dbPass);
-        db.createIncident("test");
+        Patient pat = new Patient("Harvey", ", Bournemouth", "01202", "Ice Cream");
+        db.createIncident("test", pat);
     }
 }

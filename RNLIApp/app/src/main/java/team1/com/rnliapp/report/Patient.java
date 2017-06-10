@@ -5,5 +5,12 @@ package team1.com.rnliapp.report;
  */
 
 public class Patient {
+    String name, address, telephoneNumber, lastMeal;
 
+    public Patient(String name, String address, String telephoneNumber, String lastMeal){
+        this.name = name;
+        this.address = address;
+        this.telephoneNumber = telephoneNumber;
+        this.lastMeal = lastMeal;
+    }
 }

@@ -40,10 +40,10 @@ public class ContentsActivity extends AppCompatActivity {
         //changes the name of the suggested box to correspond with the suggested card
         switch (cardSuggestion) {
             case 1:
-                suggestionButton.setText("SUGGESTION: UNCONCIOUS BREATHING PATIENT CARE");
+                suggestionButton.setText("SUGGESTION: UNCONSCIOUS BREATHING PATIENT CARE");
                 break;
             case 2:
-                suggestionButton.setText("SUGGESTION: RESUSCITATIONAND VENTILATORY SUPPORT");
+                suggestionButton.setText("SUGGESTION: RESUSCITATION AND VENTILATORY SUPPORT");
                 break;
             case 3:
                 suggestionButton.setText("SUGGESTION: CONTROL OF MAJOR BLEEDING");
@@ -58,7 +58,7 @@ public class ContentsActivity extends AppCompatActivity {
                 suggestionButton.setText("SUGGESTION: ASTHMA");
                 break;
             case 7:
-                suggestionButton.setText("SUGGESTION: SEVERE ALLERGIC REATION");
+                suggestionButton.setText("SUGGESTION: SEVERE ALLERGIC REACTION");
                 break;
             case 8:
                 suggestionButton.setText("SUGGESTION: LOW BLOOD SUGAR (HYPO)");

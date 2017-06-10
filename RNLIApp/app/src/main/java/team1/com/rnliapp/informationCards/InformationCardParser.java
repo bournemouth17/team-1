@@ -22,39 +22,36 @@ public class InformationCardParser {
     private static InformationCardParser instance = null;
 
     private InformationCardParser() {}
-    //TODO Split into sub methods and maybe error check?
-    public InformationCard parseCardFromFile(String nameOfCard) {
+
+    public InformationCard parseCardFromFile(String nameOfCard) throws ParseException, IOException {
+        if(nameOfCard.length() < 1 ) return null;
+        if(nameOfCard.contains(".json")) nameOfCard = nameOfCard.substring(0, nameOfCard.length() - 5);
         InformationCard card;
         JSONParser parser = new JSONParser();
-        try {
-            Object object = parser.parse(new FileReader("app/src/main/java/team1/com/rnliapp/informationCards/" + nameOfCard + ".json"));
-            JSONObject jsonObject = (JSONObject) object;
-            String cardName = (String) jsonObject.get("card_name");
-            //System.out.println("Name: " + cardName);
-            long cardNumber = (Long) jsonObject.get("card_number");
-            card = new InformationCard(cardName, (int)cardNumber);
-            //System.out.println("Number: " + cardNumber + "\nMarkers:");
-            JSONArray markers = (JSONArray) jsonObject.get("markers");
-            for(int i = 0; i < markers.size(); i++) {
-                //System.out.println(markers.get(i));
-                card.addMarker((String) markers.get(i));
+        Object object = parser.parse(new FileReader("app/src/main/java/team1/com/rnliapp/informationCards/" + nameOfCard + ".json"));
+        JSONObject jsonObject = (JSONObject) object;
+        String cardName = (String) jsonObject.get("card_name");
+        //System.out.println("Name: " + cardName);
+        long cardNumber = (Long) jsonObject.get("card_number");
+        card = new InformationCard(cardName, (int)cardNumber);
+        //System.out.println("Number: " + cardNumber + "\nMarkers:");
+        JSONArray markers = (JSONArray) jsonObject.get("markers");
+        for(int i = 0; i < markers.size(); i++) {
+            //System.out.println(markers.get(i));
+            card.addMarker((String) markers.get(i));
+        }
+        JSONArray branches = (JSONArray) jsonObject.get("branches");
+        for(int i = 0; i < branches.size(); i++) {
+            JSONObject branch = (JSONObject) branches.get(i);
+            String branchName = (String) branch.get("branch_name");
+            //System.out.println(branchName + "'s Steps:");
+            JSONArray steps = (JSONArray) branch.get("branch_steps");
+            String[] stepArray = new String[steps.size()];
+            for(int j = 0; j < steps.size(); j++) {
+                //System.out.println((j + 1) + ") " + steps.get(j));
+                stepArray[j] = (String) steps.get(j);
             }
-            JSONArray branches = (JSONArray) jsonObject.get("branches");
-            for(int i = 0; i < branches.size(); i++) {
-                JSONObject branch = (JSONObject) branches.get(i);
-                String branchName = (String) branch.get("branch_name");
-                //System.out.println(branchName + "'s Steps:");
-                JSONArray steps = (JSONArray) branch.get("branch_steps");
-                String[] stepArray = new String[steps.size()];
-                for(int j = 0; j < steps.size(); j++) {
-                    //System.out.println((j + 1) + ") " + steps.get(j));
-                    stepArray[j] = (String) steps.get(j);
-                }
-                card.addBranch(branchName, stepArray);
-            }
-        } catch (ParseException | IOException e) {
-            e.printStackTrace();
-            return null;
+            card.addBranch(branchName, stepArray);
         }
         return card;
     }

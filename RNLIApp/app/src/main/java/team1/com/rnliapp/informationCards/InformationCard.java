@@ -110,6 +110,10 @@ public class InformationCard {
         return null;
     }
 
+    public int getBranchCount() {
+        return branches.size();
+    }
+
     public String[] getBranchSteps(int branchIndex) {
         if(branchIndex < branches.size()) {
             return branches.get(branchIndex).toArray(new String[branches.size()]);

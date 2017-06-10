@@ -19,10 +19,19 @@ public class MainActivity extends AppCompatActivity {
                 launchMainNavigationActivity();
             }
         });
+
+        Button nickButton = (Button)(findViewById(R.id.NickButton));
+        nickButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, InitialPatientCheck.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void launchMainNavigationActivity() {
-        Intent intent = new Intent(this, MainNavigationActivity.class);
+        Intent intent = new Intent(this, ContentsActivity.class);
         startActivity(intent);
     }
 

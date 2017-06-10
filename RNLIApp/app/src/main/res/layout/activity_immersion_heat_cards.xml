@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="team1.com.rnliapp.ImmersionHeatCards">
+
+    <ScrollView
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:id="@+id/card17"
+                android:text="DROWNING AND NEAR DROWNING"
+                android:background="@android:color/holo_blue_light"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:id="@+id/card18"
+                android:text="COLD AND HYPOTHERMIA"
+                android:background="@android:color/holo_blue_light"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:id="@+id/card19"
+                android:text="HEAT EXHAUSTION AND HEAT STROKE"
+                android:background="@android:color/holo_blue_light"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

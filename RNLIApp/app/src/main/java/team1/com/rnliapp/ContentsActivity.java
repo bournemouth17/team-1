@@ -1,5 +1,6 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -86,6 +87,8 @@ public class ContentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to care / control card options
+                Intent intent = new Intent(ContentsActivity.this, CareControlCards.class);
+                startActivity(intent);
             }
         });
 
@@ -93,6 +96,8 @@ public class ContentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to illness card options
+                Intent intent = new Intent(ContentsActivity.this, IllnessCards.class);
+                startActivity(intent);
             }
         });
 
@@ -100,6 +105,8 @@ public class ContentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to injury card options
+                Intent intent = new Intent(ContentsActivity.this, InjuryActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -107,6 +114,8 @@ public class ContentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //go to immersion / heat card options
+                Intent intent = new Intent(ContentsActivity.this, ImmersionHeatCards.class);
+                startActivity(intent);
             }
         });
     }

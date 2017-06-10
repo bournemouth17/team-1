@@ -1,5 +1,6 @@
 package team1.com.rnliapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,9 @@ public class InjuryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 12
+                Intent intent = new Intent(InjuryActivity.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",12);
+                startActivity(intent);
             }
         });
 
@@ -33,6 +37,9 @@ public class InjuryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 13
+                Intent intent = new Intent(InjuryActivity.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",13);
+                startActivity(intent);
 
             }
         });
@@ -41,6 +48,9 @@ public class InjuryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 14
+                Intent intent = new Intent(InjuryActivity.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",14);
+                startActivity(intent);
             }
         });
 
@@ -48,6 +58,9 @@ public class InjuryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 15
+                Intent intent = new Intent(InjuryActivity.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",15);
+                startActivity(intent);
             }
         });
 
@@ -55,6 +68,9 @@ public class InjuryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open card 16
+                Intent intent = new Intent(InjuryActivity.this, InformationCardDisplay.class);
+                intent.putExtra("CARD_NUMBER",16);
+                startActivity(intent);
             }
         });
     }

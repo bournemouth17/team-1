@@ -58,9 +58,10 @@ public class Database {
         }
     }
 
-    public void createIncident(String description, Patient patient, Allergy allergy){
+    public void createIncident(String description, Patient patient, Allergy allergy, MedicineAdministered dosage){
         executeUpdate("INSERT INTO patient(`incidentId`,`name`,`address`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + patient.getName() +"', '" + patient.getAddress() +"','" + patient.getTelephoneNumber() +"', '" + patient.getLastMeal() +"')");
-        executeUpdate("INSERT INTO allergy(`incidentId`,`title`,`medication`) VALUES("+ getIncidentId() +", '" + allergy.getTitle() +"', '" + allergy.getMedication() +"')");
+        executeUpdate("INSERT INTO patient(`incidentId`,`telephoneNumber`,`lastMeal`) VALUES("+ getIncidentId() +", '" + patient.getName() +"', '" + patient.getAddress() +"')");
+        executeUpdate("INSERT INTO allergy(`incidentId`,`name`,`time`,`dose`) VALUES("+ getIncidentId() +", '" + dosage.getName() +"', '" + dosage.getDatetime() +"', '" + dosage.getDose() +"')");
         executeUpdate("INSERT INTO incident(`incidentId`,`description`) VALUES("+ getIncidentId() +", '" + description +"')");
     }
 
@@ -83,6 +84,8 @@ public class Database {
         String dbPass = "password";
         Database db = new Database(dbURL, dbUser, dbPass);
         Patient pat = new Patient("Harvey", ", Bournemouth", "01202", "Ice Cream");
-        db.createIncident("test", pat);
+        Allergy allergy = new Allergy("Hayfever", "Nasal Spray");
+        MedicineAdministered dosage = new MedicineAdministered("Paracetemol", "400mg");
+        db.createIncident("test", pat, allergy, dosage);
     }
 }

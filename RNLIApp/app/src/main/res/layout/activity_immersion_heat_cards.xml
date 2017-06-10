@@ -20,7 +20,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="165dp"
                 android:id="@+id/card17"
                 android:text="DROWNING AND NEAR DROWNING"
                 android:background="@android:color/holo_blue_light"
@@ -28,7 +28,7 @@
                 android:textSize="25sp"/>
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="165dp"
                 android:id="@+id/card18"
                 android:text="COLD AND HYPOTHERMIA"
                 android:background="@android:color/holo_blue_light"
@@ -36,7 +36,7 @@
                 android:textSize="25sp"/>
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="165dp"
                 android:id="@+id/card19"
                 android:text="HEAT EXHAUSTION AND HEAT STROKE"
                 android:background="@android:color/holo_blue_light"

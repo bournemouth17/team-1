@@ -23,7 +23,8 @@
         <activity android:name=".IllnessCards" />
         <activity android:name=".InjuryActivity" />
         <activity android:name=".ImmersionHeatCards" />
-        <activity android:name=".PatientInfo"></activity>
+        <activity android:name=".PatientInfo" />
+        <activity android:name=".ReassessNotifActivity"></activity>
     </application>
 
 </manifest>

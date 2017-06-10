@@ -46,20 +46,20 @@
 
     <Button
         android:id="@+id/suggestionButton"
-        android:layout_width="344dp"
+        android:layout_width="350dp"
         android:layout_height="75dp"
-        android:text="Suggestion: Desc."
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/holo_red_dark"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Suggestion: Desc."
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0"
-        android:textSize="20sp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/orangeButton"
